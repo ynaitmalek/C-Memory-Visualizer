@@ -1,0 +1,3056 @@
+{
+ "source": "gdb-precomputed",
+ "status": "ok",
+ "diagnostics": [],
+ "program": {
+  "name": "factorial.c",
+  "code": "#include <stdio.h>\n\nint factorial(int n) {\n    if (n <= 1) {\n        return 1;\n    }\n    return n * factorial(n - 1);\n}\n\nint main(void) {\n    int result = factorial(5);\n    printf(\"5! = %d\\n\", result);\n    return 0;\n}"
+ },
+ "stdin": "",
+ "segments": {
+  "text": {
+   "start": "0x555555555080",
+   "end": "0x5555555551fa"
+  },
+  "rodata": {
+   "start": "0x555555556000",
+   "end": "0x55555555600d"
+  },
+  "data": {
+   "start": "0x555555558000",
+   "end": "0x555555558010"
+  },
+  "bss": {
+   "start": "0x555555558010",
+   "end": "0x555555558020"
+  },
+  "heap": {
+   "start": null,
+   "end": null
+  },
+  "stack": {
+   "start": "0x7ffffffde000",
+   "end": "0x7ffffffff000"
+  }
+ },
+ "steps": [
+  {
+   "index": 0,
+   "line": 11,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 1,
+   "line": 4,
+   "expr": null,
+   "event": "call",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": {
+    "args": [
+     {
+      "param": "n",
+      "value": 5,
+      "fromExpr": "5"
+     }
+    ]
+   },
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 2,
+   "line": 7,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 3,
+   "line": 4,
+   "expr": null,
+   "event": "call",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": {
+    "args": [
+     {
+      "param": "n",
+      "value": 4,
+      "fromExpr": "n - 1"
+     }
+    ]
+   },
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 4,
+   "line": 7,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 5,
+   "line": 4,
+   "expr": null,
+   "event": "call",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": {
+    "args": [
+     {
+      "param": "n",
+      "value": 3,
+      "fromExpr": "n - 1"
+     }
+    ]
+   },
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 6,
+   "line": 7,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 7,
+   "line": 4,
+   "expr": null,
+   "event": "call",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f4",
+     "function": "factorial",
+     "callerFrameId": "f3",
+     "callLine": 7,
+     "depth": 4,
+     "frameStart": "0x7fffffffec00",
+     "frameEnd": "0x7fffffffec20",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec0c",
+       "value": 2,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": {
+    "args": [
+     {
+      "param": "n",
+      "value": 2,
+      "fromExpr": "n - 1"
+     }
+    ]
+   },
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 8,
+   "line": 7,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f4",
+     "function": "factorial",
+     "callerFrameId": "f3",
+     "callLine": 7,
+     "depth": 4,
+     "frameStart": "0x7fffffffec00",
+     "frameEnd": "0x7fffffffec20",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec0c",
+       "value": 2,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 9,
+   "line": 4,
+   "expr": null,
+   "event": "call",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f5",
+     "function": "factorial",
+     "callerFrameId": "f4",
+     "callLine": 7,
+     "depth": 5,
+     "frameStart": "0x7fffffffebe0",
+     "frameEnd": "0x7fffffffec00",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec10",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffebec",
+       "value": 1,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f4",
+     "function": "factorial",
+     "callerFrameId": "f3",
+     "callLine": 7,
+     "depth": 4,
+     "frameStart": "0x7fffffffec00",
+     "frameEnd": "0x7fffffffec20",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec0c",
+       "value": 2,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": {
+    "args": [
+     {
+      "param": "n",
+      "value": 1,
+      "fromExpr": "n - 1"
+     }
+    ]
+   },
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 10,
+   "line": 5,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f5",
+     "function": "factorial",
+     "callerFrameId": "f4",
+     "callLine": 7,
+     "depth": 5,
+     "frameStart": "0x7fffffffebe0",
+     "frameEnd": "0x7fffffffec00",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec10",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffebec",
+       "value": 1,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f4",
+     "function": "factorial",
+     "callerFrameId": "f3",
+     "callLine": 7,
+     "depth": 4,
+     "frameStart": "0x7fffffffec00",
+     "frameEnd": "0x7fffffffec20",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec0c",
+       "value": 2,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 11,
+   "line": 8,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f5",
+     "function": "factorial",
+     "callerFrameId": "f4",
+     "callLine": 7,
+     "depth": 5,
+     "frameStart": "0x7fffffffebe0",
+     "frameEnd": "0x7fffffffec00",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec10",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffebec",
+       "value": 1,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f4",
+     "function": "factorial",
+     "callerFrameId": "f3",
+     "callLine": 7,
+     "depth": 4,
+     "frameStart": "0x7fffffffec00",
+     "frameEnd": "0x7fffffffec20",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec0c",
+       "value": 2,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 12,
+   "line": 7,
+   "expr": null,
+   "event": "return",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f4",
+     "function": "factorial",
+     "callerFrameId": "f3",
+     "callLine": 7,
+     "depth": 4,
+     "frameStart": "0x7fffffffec00",
+     "frameEnd": "0x7fffffffec20",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec0c",
+       "value": 2,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": {
+    "value": 1,
+    "toFrameId": "f4",
+    "resumeLine": 7
+   },
+   "error": null
+  },
+  {
+   "index": 13,
+   "line": 8,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f4",
+     "function": "factorial",
+     "callerFrameId": "f3",
+     "callLine": 7,
+     "depth": 4,
+     "frameStart": "0x7fffffffec00",
+     "frameEnd": "0x7fffffffec20",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec0c",
+       "value": 2,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 14,
+   "line": 7,
+   "expr": null,
+   "event": "return",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": {
+    "value": 2,
+    "toFrameId": "f3",
+    "resumeLine": 7
+   },
+   "error": null
+  },
+  {
+   "index": 15,
+   "line": 8,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f3",
+     "function": "factorial",
+     "callerFrameId": "f2",
+     "callLine": 7,
+     "depth": 3,
+     "frameStart": "0x7fffffffec20",
+     "frameEnd": "0x7fffffffec40",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec50",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec2c",
+       "value": 3,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 16,
+   "line": 7,
+   "expr": null,
+   "event": "return",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": {
+    "value": 6,
+    "toFrameId": "f2",
+    "resumeLine": 7
+   },
+   "error": null
+  },
+  {
+   "index": 17,
+   "line": 8,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f2",
+     "function": "factorial",
+     "callerFrameId": "f1",
+     "callLine": 7,
+     "depth": 2,
+     "frameStart": "0x7fffffffec40",
+     "frameEnd": "0x7fffffffec60",
+     "returnAddress": "0x555555555192",
+     "savedRbp": "0x7fffffffec70",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec4c",
+       "value": 4,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 18,
+   "line": 7,
+   "expr": null,
+   "event": "return",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": {
+    "value": 24,
+    "toFrameId": "f1",
+    "resumeLine": 7
+   },
+   "error": null
+  },
+  {
+   "index": 19,
+   "line": 8,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f1",
+     "function": "factorial",
+     "callerFrameId": "f0",
+     "callLine": 11,
+     "depth": 1,
+     "frameStart": "0x7fffffffec60",
+     "frameEnd": "0x7fffffffec80",
+     "returnAddress": "0x5555555551ae",
+     "savedRbp": "0x7fffffffec90",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec6c",
+       "value": 5,
+       "name": "n",
+       "kind": "param",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "factorial",
+        "fromLine": 3,
+        "toLine": 8
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    },
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 20,
+   "line": 11,
+   "expr": null,
+   "event": "return",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 32767,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": {
+    "value": 120,
+    "toFrameId": "f0",
+    "resumeLine": 11
+   },
+   "error": null
+  },
+  {
+   "index": 21,
+   "line": 12,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "",
+   "callStack": [
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 120,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [
+    "f0.result"
+   ],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 22,
+   "line": 13,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "5! = 120\n",
+   "callStack": [
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 120,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 23,
+   "line": 14,
+   "expr": null,
+   "event": "line",
+   "explanation": null,
+   "stdout": "5! = 120\n",
+   "callStack": [
+    {
+     "frameId": "f0",
+     "function": "main",
+     "callerFrameId": null,
+     "callLine": null,
+     "depth": 0,
+     "frameStart": "0x7fffffffec80",
+     "frameEnd": "0x7fffffffeca0",
+     "returnAddress": null,
+     "savedRbp": "0x7fffffffed30",
+     "returnValue": null,
+     "variables": [
+      {
+       "type": "int",
+       "size": 4,
+       "address": "0x7fffffffec8c",
+       "value": 120,
+       "name": "result",
+       "kind": "local",
+       "segment": "stack",
+       "align": 4,
+       "initialized": true,
+       "isConst": false,
+       "scope": {
+        "function": "main",
+        "fromLine": 10,
+        "toLine": 14
+       },
+       "lifetime": "automatic"
+      }
+     ]
+    }
+   ],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": null,
+   "error": null
+  },
+  {
+   "index": 24,
+   "line": 14,
+   "expr": null,
+   "event": "exit",
+   "explanation": null,
+   "stdout": "5! = 120\n",
+   "callStack": [],
+   "globals": [],
+   "rodata": [],
+   "heap": [],
+   "changed": [],
+   "callEvent": null,
+   "returnEvent": {
+    "value": 0,
+    "toFrameId": null,
+    "resumeLine": null
+   },
+   "error": null
+  }
+ ]
+}
