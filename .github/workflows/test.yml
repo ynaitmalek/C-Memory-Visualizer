@@ -1,0 +1,31 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]   # main is covered by the deploy workflow's build
+
+jobs:
+  unit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test            # vitest: type system, memory layout, interpreter
+
+  engine-vs-gdb:
+    # The main correctness guarantee: the browser engine must match real GDB on every example.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y gdb gcc
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm run gdb-traces
+      # Runs each example through the engine and diffs against the GDB trace:
+      # line sequence, variable values, stdout, heap sizes/order, segments, frame offsets.
+      - run: npm run compare-traces
